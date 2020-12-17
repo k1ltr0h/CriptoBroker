@@ -4,12 +4,20 @@ Comunicación segura para sensores y redes IoT.
 
 ## Herramientas
 
+### BASE
 - Node.js
 - Express.js
+- React.js
+
+### DB
 - MySQL
+
+### Crypt
 - AES
 - Cesar (Sustitución)
 - Curvas elípticas
+
+### HOSTING
 - Firebase
 
 ## Diagrama explicativo de la red
