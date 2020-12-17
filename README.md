@@ -20,7 +20,7 @@ Comunicación segura para sensores y redes IoT.
 
 | Nombre | Rol |
 | ---- | ---- | 
-| Christian Fuentes | 19310588-2 |
-| ... | ... |
+| Christian Fuentes | 201530024-0 |
+| Sebastián Araneda | 201530022-4 |
 | Victor Cortés M | 201604140-0 |
 | Mario Araya F | 201630003-1 |
