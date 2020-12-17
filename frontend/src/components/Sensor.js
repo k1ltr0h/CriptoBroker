@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {Tvoc, Temperature} from 'react-environment-chart';
+import {Tvoc, Temperature,Humidity} from 'react-environment-chart';
+import {Row,Col,Container} from 'react-bootstrap';
 
 export default class Sensor extends Component {
     constructor(props){
@@ -34,25 +35,32 @@ export default class Sensor extends Component {
     render(){
         const {temperature, location, humidity, ph, uv} = this.state
         return(
-            <div>
-                <h3>
-                    temperature: {temperature}
-                </h3>
-                <h3>
-                    lugar: {location}
-                </h3>
-                <h3>
-                    humedad: {humidity}
-                </h3>
-                <h3>
-                    PH: {ph}
-                </h3>
-                <Tvoc 
-                    value={0.4}    
-                />
-                <Temperature 
-                    value={temperature}
-                />
+            <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
+                    <Col md={{ span: 3, offset: 3 }}>
+                        <h4>
+                            temperature: {temperature} <br/>
+                            lugar: {location} <br/>
+                            humedad: {humidity} <br/>
+                            PH: {ph}
+                        </h4>
+                    </Col>
+                    <Col>
+                        <Tvoc
+                            height={256} 
+                            value={uv}    
+                        />
+                    </Col>
+                    <Col>
+                        <Temperature 
+                            height={256}
+                            value={temperature}
+                        />
+                    </Col>
+                    <Col>   
+                        <Humidity 
+                            value={humidity} 
+                        />            
+                    </Col>  
             </div>
         )
     }
