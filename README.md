@@ -12,6 +12,16 @@ Comunicación segura para sensores y redes IoT.
 - Curvas elípticas
 - Firebase
 
+## Dependencias
+
+- PyCryptodome (Algoritmos de encriptación)
+
+-----> `pip install pycryptodome`
+
+- Request (HTTP request)
+
+-----> `python -m pip install requests`
+
 ## Diagrama explicativo de la red
 
 ![Diagrama](imgs/proyecto.png)
