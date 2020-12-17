@@ -7,11 +7,16 @@ export default class Dashboard extends Component {
     }
  
     render() {
-        const met = "metropolitana";
         return (
-            <Sensor
-                location={"valpo"}
-            />
+            <>
+                <Sensor
+                    location={"valpo"}
+                />
+
+                <Sensor
+                location={"santiago"}
+                />
+            </>
         )
     }
 }
