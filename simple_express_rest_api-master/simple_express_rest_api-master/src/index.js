@@ -54,3 +54,8 @@ app.delete('/users/:email', async (req, res) => {
 app.listen(port, function () {
     console.log('Escuchando en el puerto ' + port);
 });
+
+app.put('/insert-lecture', async (req, res) => {
+    const response = await insertLecture(req.body.idsensor, req.body.lecture);
+    res.json(response);
+});
