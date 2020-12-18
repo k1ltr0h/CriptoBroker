@@ -21,7 +21,7 @@ const port = 5238
 var con = mysql.createConnection({
   host: config.host,
   database : config.database,
-  port: '3306',
+  port: config.port, // 3306
   user: config.username,
   password: config.password
 });
