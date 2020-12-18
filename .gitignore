@@ -1,6 +1,7 @@
 frontend/node_modules/
 api-web/node_modules/
-
+api-web/config.json
+node_modules/
 frontend/.pnp
 frontend/.pnp.js
 
