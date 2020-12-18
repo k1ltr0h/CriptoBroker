@@ -9,7 +9,14 @@ const app = express()
 
 var register = require('./routes/register.js');
 
-const port = 5237
+const port = 5238
+
+// mysql_config --socket
+// var connection = mysql.createConnection({
+//   socketPath : '/tmp/mysql.sock',
+//   user       : 'root',
+//   password   : '123'
+// });
 
 var con = mysql.createConnection({
   host: config.host,
