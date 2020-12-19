@@ -1,17 +1,35 @@
 import React, { Component } from 'react';
 import {Tvoc, Temperature,Humidity} from 'react-environment-chart';
-import {Row,Col,Container} from 'react-bootstrap';
+import {Col,Row} from 'react-bootstrap';
+import sensorService from '../services/sensor.service';
 
 export default class Sensor extends Component {
     constructor(props){
         super(props)
         this.state = {
             location: this.props.location,
+            id : this.props.id,
             temperature: -1,
-            humidity: -1,
+            humidity: 80,
             ph: -1,
             uv: 0
         }
+    }
+    componentDidMount(){
+        this.getJoke();
+                this.interval = setInterval(() => {
+                this.fetch_from_api()
+                }, 5000);
+    }
+    fetch_from_api(){
+        sensorService.get_sensor(this.state.id).then(
+            res=> {
+                const data = res.data;
+                this.setState({temperature: data['temp']});
+                this.setState({humidity: data['humidity']});
+                console.log(data)
+            }
+        )
     }
 
     handle_temperature(){
@@ -36,6 +54,7 @@ export default class Sensor extends Component {
         const {temperature, location, humidity, ph, uv} = this.state
         return(
             <div style={{display: 'flex',  justifyContent:'center', alignItems:'center', height: '100vh'}}>
+                
                     <Col md={{ span: 3, offset: 3 }}>
                         <h4>
                             temperature: {temperature} <br/>

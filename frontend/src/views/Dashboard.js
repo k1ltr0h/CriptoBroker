@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
 import Sensor from'../components/Sensor';
-import {Row,Col,Container} from 'react-bootstrap';
 
-export default class Dashboard extends Component {
-    constructor(props){
-        super(props)  
-    }
- 
+export default class Dashboard extends Component { 
     render() {
         return (
             <>
                     <Sensor
                         location={"valpo"}
+                        id={27}
                     />
                 
                     <Sensor
                         location={"santiago"}
+                        id={28}
                     />
             </>
         )
