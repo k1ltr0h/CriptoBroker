@@ -140,6 +140,34 @@ async function deleteUser(email) {
     }
 }
 
+async function insertLecture(idsensor, lecture) {
+    const db = openDBConnection();
+    try {
+        let query = await db.query('INSERT INTO sensores VALUES (?, ?, ?, ?)', 
+        [
+            idsensor, 
+            lecture, 
+            new Date(), 
+        ]);
+        if(query) {
+            return {
+                succesfull: true
+            }
+        } else {
+            return {
+                succesfull: false
+            }
+        }
+    } catch (err) {
+        console.log(err);
+        return {
+            succesfull: false, 
+            error: err
+        }
+    } finally {
+        await db.close();
+    }  
+}
 module.exports.insertUser = insertUser;
 module.exports.updateUser = updateUser;
 module.exports.getAllUsers = getAllUsers;
