@@ -9,7 +9,7 @@ const sequelize = new Sequelize(config.database, config.username, config.passwor
 const sensores = sequelize.define('sensores', {
     id_sensor: { type:Sequelize.INTEGER, allowNull: false},
     lectura: {type:Sequelize.STRING, allowNull: false},
-    timestamp: {type:'TIMESTAMP', defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'), allowNull: false}
+    fecha: {type:'TIMESTAMP', defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'), allowNull: false}
     },{ timestamps: false});
 
 sensores.removeAttribute('id');
