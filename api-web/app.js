@@ -10,13 +10,6 @@ var register = require('./routes/register.js');
 
 const port = 5238
 
-// mysql_config --socket
-// var connection = mysql.createConnection({
-//   socketPath : '/tmp/mysql.sock',
-//   user       : 'root',
-//   password   : '123'
-// });
-
 var con = mysql.createConnection({
   host: config.host,
   database : config.database,
@@ -62,36 +55,3 @@ app.get('/sensor/27', (req,res) => {
 app.get('/sensor/28', (req,res) => {
   res.send(JSON.stringify(myjsondata28))
 })
-
-// post data to DB
-//app.post('')
-
-
-
-/*
-var mqtt = require('mqtt');
-const { query } = require('express');
-var client  = mqtt.connect('mqtt://test.mosquitto.org')
- 
-client.on('connect', function () {
-  client.subscribe('sensorB', function (err) {
-    if (!err) {
-      client.publish('sensorB', 'Hello mqtt from node')
-    }
-  })
-})
-
-
- 
-client.on('message', function (topic, message, packet) {
-  // message is Buffer
-  console.log("message: " + message)
-  console.log("topic: " + topic)
-})
-var enc = "asjfhasldghÑSGHLAKJGHIOA8W4TIUWHRGLIAJEÑRIGJLIsegwkefdchupalacorneta"
-
-client.publish('sensorB', JSON.stringify(myjsondata))
-
-//console.log(JSON.stringify(myjsondata))
-
-*/
