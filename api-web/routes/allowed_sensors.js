@@ -4,7 +4,7 @@ var express = require('express');
 var router = express.Router();
 
 module.exports = router;
-
+/*
 router.post("/id", async function(req, res){
     console.log(req.body.id)
     await allowed_sensors.create({ 
@@ -18,7 +18,7 @@ router.post("/id", async function(req, res){
             console.log(error);
     });
 
-});
+});*/
 
 router.get("/all", function (req, res) {
     allowed_sensors.findAll({
