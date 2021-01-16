@@ -82,8 +82,8 @@ while True:
 
     #print(data, id)
 
-    url = 'http://localhost:5238/add/data'
-    headers = {'content-type': 'application/json'}
+    url = 'http://localhost:9600/sensor/add'
+    headers = {'Content-type': 'application/json'}
     myobj = {
         "id_sensor": [b for b in cipherid],
         'lectura': [b for b in ciphertext],

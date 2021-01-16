@@ -8,7 +8,7 @@ const config = require("./config.json")
 const app = express()
 var register = require('./routes/register.js');
 
-const port = 5238
+const port = 9600
 
 var con = mysql.createConnection({
   host: config.host,
@@ -33,7 +33,7 @@ var corsOptions = {
 
 app.all("*",cors(corsOptions));
 
-app.use('/add', register);
+app.use('/sensor', register);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
