@@ -6,7 +6,6 @@ var router = express.Router();
 
 module.exports = router;
 
-//router.use("/data", verifySensor.check_sensor);
 router.post("/add", verifySensor.check_sensor);
 
 router.use("/all", verifySensor.check_db);

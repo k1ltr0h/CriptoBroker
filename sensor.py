@@ -34,9 +34,8 @@ while True:
     except:
         continue
 
-#key = [42, 108, 14, 78, 10, 169, 183, 98, 2, 137, 140, 207, 54, 45, 71, 205]
+#key = [42, 108, 14, 78, 10, 169, 183, 98, 2, 137, 140, 207, 54, 45, 71, 205] # equivalente en ints(unsigned) de 1 byte 
 key = b'F\xfb\xb3\x8e\xc2\xf0\xe6u\xf2\xb5\xaf]u\x90\xbd\x06'
-#print(key, [b for b in key])
 counter = 0
 max_val = 4
 while True:
@@ -75,18 +74,14 @@ while True:
 
     ciphertext = AES.new(key, AES.MODE_OFB, iv).decrypt(data)
     cipherid = AES.new(key, AES.MODE_OFB, iv).decrypt(id_sensor)
-    #ciphertext, tag = cipher.encrypt_and_digest(data)
-    
-    #codecs.encode(ciphertext, 'rot_13')
 
-    print("Cifrado: ",ciphertext, " IV: ", iv)#, "- Nonce: ",cipher.nonce, "\n") # data cifrado, numero de autenticacion
+    print("Cifrado: ",ciphertext, " IV: ", iv)# data cifrado, vector inicial
 
-    # let's assume that the key is somehow available again
+    # let's assume that the key is somehow available again # Decrypt
     #data = AES.new(key, AES.MODE_OFB, iv).decrypt(ciphertext)# cipher.nonce) #nonce)
     #id = AES.new(key, AES.MODE_OFB, iv).decrypt(cipherid)
     #data = cipher.decrypt_and_verify(ciphertext, tag)
-
-    #print(data, id)
+    #print(data, id) # END Decrypt
 
     url = 'http://localhost:9600/sensor/add'
     headers = {'Content-type': 'application/json'}

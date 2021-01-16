@@ -7,6 +7,8 @@ const config = require("./config.json")
 
 const app = express()
 var register = require('./routes/register.js');
+var allowed = require('./routes/allowed_sensors.js');
+const allowed_sensors = require('./models/allowed_sensors');
 
 const port = 9600
 
@@ -32,26 +34,13 @@ var corsOptions = {
 
 
 app.all("*",cors(corsOptions));
+app.use(express.json())
 
 app.use('/sensor', register);
+app.use('/allowed', allowed);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-//app.use(cors())
-
-//var myjsondata = { "id-sensor": 27 ,"temp": 28, "humidity": 65, "uv": 0.8}
-//var myjsondata28 = { "id-sensor": 28 ,"temp": 34, "humidity": 20, "uv": 0.8}
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
-
-/*
-// testing front data
-app.get('/sensor/27', (req,res) => {
-  res.send(JSON.stringify(myjsondata))
-})
-
-app.get('/sensor/28', (req,res) => {
-  res.send(JSON.stringify(myjsondata28))
-})*/
