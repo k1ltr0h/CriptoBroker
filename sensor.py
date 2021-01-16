@@ -35,7 +35,7 @@ while True:
         continue
 
 key = get_random_bytes(16)
-
+print(key)
 while True:
     if tp == 0:
         celsius = random.randrange(15,40)
