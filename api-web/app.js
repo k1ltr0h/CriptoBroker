@@ -37,16 +37,16 @@ app.use('/add', register);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//app.use(cors())
+
+//var myjsondata = { "id-sensor": 27 ,"temp": 28, "humidity": 65, "uv": 0.8}
+//var myjsondata28 = { "id-sensor": 28 ,"temp": 34, "humidity": 20, "uv": 0.8}
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
-app.use(cors())
-
-var myjsondata = { "id-sensor": 27 ,"temp": 28, "humidity": 65, "uv": 0.8}
-var myjsondata28 = { "id-sensor": 28 ,"temp": 34, "humidity": 20, "uv": 0.8}
-
-
+/*
 // testing front data
 app.get('/sensor/27', (req,res) => {
   res.send(JSON.stringify(myjsondata))
@@ -54,4 +54,4 @@ app.get('/sensor/27', (req,res) => {
 
 app.get('/sensor/28', (req,res) => {
   res.send(JSON.stringify(myjsondata28))
-})
+})*/

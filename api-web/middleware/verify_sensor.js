@@ -4,7 +4,7 @@
 const check_sensor = (req, res, next) => {
 
 
-    res.send(JSON.stringify("middleware"))
+    //res.send(JSON.stringify("middleware"))
     console.log('middleware')
 
     next();

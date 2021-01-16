@@ -6,7 +6,5 @@ var router = express.Router();
 
 module.exports = router;
 
-
-
 router.use(verifySensor.check_sensor)
 router.post("/data", sensorController.save_info);
