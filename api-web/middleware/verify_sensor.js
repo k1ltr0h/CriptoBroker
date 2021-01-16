@@ -20,18 +20,21 @@ const check_sensor = (req, res, next) => {
         //console.log("id:",JSON.parse(body).id_sensor, "data:",JSON.parse(body).lectura, iv);
 
         var aesCfb = new aesjs.ModeOfOperation.cfb(key, iv);
+        var aesCfbL = new aesjs.ModeOfOperation.cfb(key, iv);
         var decrypted_id_Bytes = aesCfb.decrypt(id_sensor);
-        var decrypted_lecture_Bytes = aesCfb.decrypt(lectura);
+        var decrypted_lecture_Bytes = aesCfbL.decrypt(lectura);
         
         var id_decrypted = aesjs.utils.utf8.fromBytes(decrypted_id_Bytes);
         var lecture_decrypted = aesjs.utils.utf8.fromBytes(decrypted_lecture_Bytes)
-        console.log(lectura)
+        //console.log(lectura)
         //console.log("EL DATO: ",id_decrypted, lecture_decrypted);
 
 
 
         //console.log(iv)
-        //var encryptedBytes = aesjs.utils.utf8.toBytes("hola");
+        var encryptedBytes = aesjs.utils.utf8.toBytes("hoagdadatkahsdkghaLKGHNKeshgnkSHLshjfJKSDF.sflebla");
+        console.log(lectura, decrypted_lecture_Bytes, encryptedBytes, lecture_decrypted)
+
         /*var aesCfb = new aesjs.ModeOfOperation.cfb(key, iv);
         var decryptedBytes = aesCfb.decrypt(encryptedBytes);
  
