@@ -37,11 +37,17 @@ while True:
 #key = [42, 108, 14, 78, 10, 169, 183, 98, 2, 137, 140, 207, 54, 45, 71, 205]
 key = b'F\xfb\xb3\x8e\xc2\xf0\xe6u\xf2\xb5\xaf]u\x90\xbd\x06'
 #print(key, [b for b in key])
+counter = 0
+max_val = 4
 while True:
     if tp == 0:
         celsius = random.randrange(15,40)
-        id_sensor = "0"
+        if counter > max_val:
+            counter = 1
+        id_tmp = counter % max_val
+        id_sensor = str(id_tmp)
         data = "Temperature Sensor[Celsius]: "+str(celsius)
+        counter += 1
 
     elif tp == 1:
         rh = random.randrange(0,100)
