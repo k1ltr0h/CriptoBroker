@@ -34,8 +34,9 @@ while True:
     except:
         continue
 
-key = get_random_bytes(16)
-print(key)
+#key = [42, 108, 14, 78, 10, 169, 183, 98, 2, 137, 140, 207, 54, 45, 71, 205]
+key = b'F\xfb\xb3\x8e\xc2\xf0\xe6u\xf2\xb5\xaf]u\x90\xbd\x06'
+#print(key, [b for b in key])
 while True:
     if tp == 0:
         celsius = random.randrange(15,40)
@@ -75,18 +76,18 @@ while True:
     print("Cifrado: ",ciphertext, " IV: ", iv)#, "- Nonce: ",cipher.nonce, "\n") # data cifrado, numero de autenticacion
 
     # let's assume that the key is somehow available again
-    data = AES.new(key, AES.MODE_OFB, iv).decrypt(ciphertext)# cipher.nonce) #nonce)
-    id = AES.new(key, AES.MODE_OFB, iv).decrypt(cipherid)
+    #data = AES.new(key, AES.MODE_OFB, iv).decrypt(ciphertext)# cipher.nonce) #nonce)
+    #id = AES.new(key, AES.MODE_OFB, iv).decrypt(cipherid)
     #data = cipher.decrypt_and_verify(ciphertext, tag)
 
-    print(data, id)
+    #print(data, id)
 
     url = 'http://localhost:5238/add/data'
     headers = {'content-type': 'application/json'}
     myobj = {
-        "id_sensor": str(cipherid),
-        'lectura': str(ciphertext),
-        "token": str(iv)}
+        "id_sensor": [b for b in cipherid],
+        'lectura': [b for b in ciphertext],
+        "token": [b for b in iv]}
     
     try:
 
