@@ -35,10 +35,10 @@ exports.save_info = function (req, res) {
             })
             .then(us => { 
                 console.log("Datos registrados exitosamente.");
-                res.json({
+                /*res.json({
                     type: true,
                     data: "Datos registrados exitosamente."
-                });
+                });*/
             })
             .catch(error => {
                 console.log(error);
