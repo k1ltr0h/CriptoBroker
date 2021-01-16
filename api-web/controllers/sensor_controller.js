@@ -5,7 +5,22 @@ exports.get_all = function (req, res) {
     console.log()
     sensores.findAll({
          raw: true,
-         limit:5,
+         limit:10,
+        }).then(function(sensor){
+            res.send({error:false, message:'users list', data:sensor});
+        }).catch(function(err){
+            console.log('Oops! something went wrong, : ', err);
+        });
+}
+
+exports.get_by_id = function (req, res) {
+    var id = req.param('id');
+    console.log()
+    sensores.findAll({
+        where: {
+            id_sensor: id
+          },
+        raw: true,
         }).then(function(sensor){
             res.send({error:false, message:'users list', data:sensor});
         }).catch(function(err){

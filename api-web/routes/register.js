@@ -11,4 +11,5 @@ router.post("/add", verifySensor.check_sensor);
 
 router.use("/all", verifySensor.check_db);
 router.get("/all", sensorController.get_all);
+router.get("/id/:id", sensorController.get_by_id);
 
