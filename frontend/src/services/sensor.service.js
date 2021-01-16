@@ -1,9 +1,13 @@
 import {api} from '../helpers/api';
 const basePath = '/sensor';
 
-function get_sensor(idd) {
-    return api.get(`${basePath}/${idd}`)
+function get_sensors() {
+    return api.get(`${basePath}/all`)
 }
 
-const sensorService = {get_sensor}
+function get_sensor(idd){
+    return api.get(`${basePath}/id/${idd}`)
+}
+
+const sensorService = {get_sensors,get_sensor}
 export default sensorService;

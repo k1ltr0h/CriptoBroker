@@ -20,7 +20,9 @@ exports.get_by_id = function (req, res) {
         where: {
             id_sensor: id
           },
+        order: [['fecha', 'DESC']],
         raw: true,
+        limit: 1,
         }).then(function(sensor){
             res.send({error:false, message:'users list', data:sensor});
         }).catch(function(err){

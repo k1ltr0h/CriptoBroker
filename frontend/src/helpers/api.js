@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const endpoints = {
-    develoment: 'http://localhost:5237',
+    develoment: 'http://localhost:9600',
 };
 
 const username = ''
