@@ -28,11 +28,11 @@ const check_sensor = (req, res, next) => {
         //console.log(lecture_decrypted)
 
         if (sensor_id_list.includes(id_decrypted)) {
-            console.log("Sensor identificado")
+            //console.log("Sensor identificado:", id_decrypted)
             //req.id_sensor = id_sensor
             //req.lectura = lectura
             //req.token = iv
-            await sensorController.save_info(id_sensor, lectura, iv)
+            await sensorController.save_info(id_decrypted, lectura, iv)
 
         }
         else {
